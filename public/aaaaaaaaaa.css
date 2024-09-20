@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+body{
+    background: #211E24;
+    font-family: "Nunito", sans-serif;
+    padding: 50px;
+}
+button {
+    border-radius: 20px;
+    border-width: 0px;
+    background-color: #B04FE9;
+    outline: none;
+    margin-bottom: 5px;
+    height: 30px;
+    width: 100;
+    margin-left: 5px;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 0;
+    flex-wrap: wrap;
+}
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+}
+header .container .CheckboxDiv{
+    display: flex;
+}
+.logo{
+    font-weight: 800;
+    font-size: 22px;
+    text-decoration: none;
+    color: #D9D3DA;
+}
+.roxo{
+    color: #B04FE9;
+}
+
+
+#checkbox{
+    justify-content: flex-end;
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#switch{visibility: hidden;}
+label{
+    cursor: pointer;
+    text-indent: -2000px;
+    width: 400px;
+    height: 2000px;
+    background: #D9D3DA;
+    border-radius: 200px;
+    position: relative;
+}
+label:after{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 25px;
+    height: 25px;
+    background: #211E24;
+    border-radius: 90px;
+    transition: 0.4s;
+}
+input:checked + label{
+    background: #B04FE9;
+}
+input:checked + label:after{
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+.toggler{
+    display: block;
+    width: 60px;
+    height: 31px;
+    border: 2px solid #B04FE9;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(1, 1lfr);
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+}
+@media (min-width:540px) {
+    .cards{
+        grid-template-columns: repeat(2, lfr);
+    }
+}
+
+@media(min-width:960px) {
+    .cards{
+        grid-template-columns: repeat(4, lfr);
+    }
+}
+
+.card{
+    position: relative;
+    padding-bottom: 150%;
+}
+.card-back{
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    border-radius: 24px;
+    filter: brightness(.75) saturate(1.2) contrast(.85);
+    transition: .3s;
+}
+
+.card-content{
+    position: absolute;
+    padding: 24px;
+    color: white;
+}
+.card-content p {
+    color: rgba(255,255,255 .6);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: .9rem;
+}
+.card-content h3{
+    font-size: 1.9rem;
+    color: rgba(255,255,255 .9)
+    text 2px 2px 20px rgba(0,0, 0 .2);
+}
+
+.card:hover .card-back{
+    transform: scale(1.05);
+}
+
+/* Estilos do carrossel */
+.carrossel {
+    position: relative;
+    width: 800px; /* largura do carrossel */
+    height: 600px; /* altura do carrossel */
+    overflow: hidden;
+}
+
+.imagem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s;
+}
+
+.imagem.ativa {
+    opacity: 1;
+}
+
+.imagem.inativa {
+    opacity: 0;
+}
