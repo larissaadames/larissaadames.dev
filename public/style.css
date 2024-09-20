@@ -5,11 +5,40 @@
     margin: 0;
     font-family:  "Nunito", sans-serif;
 
+    transition: color 0.1s ease, background-color 0.1s ease;
 }
 
+
+/* CORES */
+
+body {
+    --cor-fundo-1: #181818;
+    --cor-fundo-2: #211E24;
+    --cor-fundo-transparente: #0003;
+    --cor-texto-1: #ffffff;
+    --cor-texto-2: #D9D3DA;
+    --cor-roxo-1: #B04FE9;
+    --cor-roxo-2: #673AB7;
+    --cor-roxo-3: #512DA8;
+
+}
+
+body.light-mode {
+    --cor-fundo-1: #D9D3DA;
+    --cor-fundo-2: #fff;
+    --cor-fundo-transparente: #aaa3;
+    --cor-texto-1: #181818;
+    --cor-texto-2: #211E24;
+    --cor-roxo-1: #B04FE9;
+    --cor-roxo-2: #673AB7;
+    --cor-roxo-3: #512DA8;
+}
+
+/* RESTO */
+
 main {
-    background-color: #181818;
-    color: #fff;
+    background-color: var(--cor-fundo-1);
+    color: var(--cor-texto-1);
     margin: 0;
     padding: 0;
     display: flex;
@@ -27,7 +56,7 @@ header{
     padding: 0;
     width: calc(100vw - 4rem);
     backdrop-filter: blur(4px);
-    background-color: #0003;
+    background-color: var(--cor-fundo-transparente);
     display: flex;
     padding: 1rem 2rem 1rem 2rem;
     
@@ -52,10 +81,10 @@ header .CheckboxDiv{
     font-weight: 800;
     font-size: 22px;
     text-decoration: none;
-    color: #D9D3DA;
+    color: var(--cor-texto-2);
 }
 .roxo{
-    color: #B04FE9;
+    color: var(--cor-roxo-1);
 }
 
 
@@ -73,7 +102,7 @@ label{
     text-indent: -2000px;
     width: 400px;
     height: 2000px;
-    background: #D9D3DA;
+    background: var(--cor-roxo-1);
     border-radius: 200px;
     position: relative;
 }
@@ -84,12 +113,12 @@ label:after{
     left: 3px;
     width: 25px;
     height: 25px;
-    background: #211E24;
+    background: var(--cor-fundo-1);
     border-radius: 90px;
     transition: 0.4s;
 }
 input:checked + label{
-    background: #B04FE9;
+    background: var(--cor-roxo-1);
 }
 input:checked + label:after{
     left: calc(100% - 5px);
@@ -99,7 +128,7 @@ input:checked + label:after{
     display: block;
     width: 60px;
     height: 31px;
-    border: 2px solid #B04FE9;
+    border: 2px solid var(--cor-roxo-1);
     border-radius: 30px;
     position: relative;
     cursor: pointer;
@@ -114,7 +143,7 @@ input:checked + label:after{
     align-items: center;
     margin-top: 5rem;
 
-    background-color: #181818;
+    background-color: var(--cor-fundo-1);
     border-radius: 10px;
     text-align: center;
 }
@@ -144,8 +173,8 @@ h1 {
 }
 
 .button {
-    background-color: #673AB7;
-    color: #fff;
+    background-color: var(--cor-roxo-2);
+    color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 10rem;
@@ -157,11 +186,11 @@ h1 {
 }
 
 .button:hover {
-    background-color: #512DA8;
+    background-color: var(--cor-roxo-3);
 }
 
 .container.sobre-mim {
-    background-color: #181818;
+    background-color: var(--cor-fundo-1);
     border-radius: 10px;
     text-align: center;
     max-width: 500px;
@@ -219,4 +248,3 @@ p {
 .projetoCapa:hover {
     transform: scale(1.1);
 }
-
