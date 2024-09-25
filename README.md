@@ -1,2 +1,3 @@
-# Portifiolio
- portifolio
+# Portfólio
+    Meu portifólio
+    linguagens utilizadas: HTML, CSS
