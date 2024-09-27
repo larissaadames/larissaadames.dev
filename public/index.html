@@ -105,10 +105,8 @@
     <script>
         document.getElementById('switch').addEventListener('change', () => {
             document.body.classList.toggle('light-mode');
-
             localStorage.setItem('light-mode', (document.body.classList.contains('light-mode')));
         });
-
         if (localStorage.getItem('light-mode') === 'true') {
             document.body.classList.add('light-mode');
             document.getElementById('switch').checked = true;
