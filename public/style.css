@@ -15,6 +15,7 @@ body {
     --cor-fundo-1: #181818;
     --cor-fundo-2: #211E24;
     --cor-fundo-transparente: #0003;
+    --cor-fundo-footer: #080808;
     --cor-texto-1: #ffffff;
     --cor-texto-2: #D9D3DA;
     --cor-roxo-1: #B04FE9;
@@ -27,6 +28,7 @@ body.light-mode {
     --cor-fundo-1: #D9D3DA;
     --cor-fundo-2: #fff;
     --cor-fundo-transparente: #aaa3;
+    --cor-fundo-footer: #cccccc;
     --cor-texto-1: #181818;
     --cor-texto-2: #211E24;
     --cor-roxo-1: #B04FE9;
@@ -221,6 +223,7 @@ p {
     flex-direction: column;
     align-items: center;
     padding: 1rem;
+    margin-bottom: 3rem;
 }
 
 .projetoImagens {
@@ -228,20 +231,34 @@ p {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
-
+    gap: .5rem;
+    padding-top: 3rem;
 }
  
 .projetoCapa img {
-    width: 100%;
     height: 100%;
 }
 .projetoCapa {
     width: 50vmin;
     overflow: visible;
-    border-radius: 3rem; 
-    transition: transform 0.3s ease, width 1s ease;
-    width: 10rem;
+    border-radius: 1rem; 
+    transition: transform 0.3s ease, width .7s ease, filter .7s ease;
+    width: 15rem;
+    height: 30rem;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: left;
+    justify-content: end;
+    gap: 1rem;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    color: #ffffff; /* imagem de fundo né */
 }
 .projetoCapa:hover {
     width: 20rem; 
@@ -252,5 +269,41 @@ p {
     }
 }
 .projetoCapa:hover {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
+    filter: brightness(0.8);
+}
+.projetoCapa > p {
+    font-size: small;
+}
+
+/* 
+FOOTER
+*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 3rem;
+    color: var(--cor-texto-1);
+    background-color: var(--cor-fundo-footer);
+}
+footer > a.logo {
+    margin: 1rem;
+    text-decoration: none !important;
+}
+footer > a {
+    color: var(--cor-texto-1);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+    padding: 1rem;
+    gap: 1rem;
+}
+footer > a:hover {
+    text-decoration: underline;
+}
+footer > a > img {
+    height: 1.5rem;
 }
