@@ -240,7 +240,11 @@ p {
     width: 50vmin;
     overflow: visible;
     border-radius: 3rem; 
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, width 1s ease;
+    width: 10rem;
+}
+.projetoCapa:hover {
+    width: 20rem; 
 }
 @media (width <= 800px) {
     .projetoCapa{
