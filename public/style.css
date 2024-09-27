@@ -64,6 +64,8 @@ header{
     align-items: center;
     flex-wrap: wrap;
 
+    z-index: 999;
+
 }
 .container{
     margin-right: auto;
