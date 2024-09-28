@@ -272,9 +272,22 @@ p {
     /* transform: scale(1.1); */
     filter: brightness(0.8);
 }
-.projetoCapa > p {
-    font-size: small;
+.projetoCapa > .githubLink {
+    padding: .5rem;
+    transition: background-color .3s ease;
+    background-color: var(--cor-fundo-2);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.projetoCapa > .githubLink:hover {
+    background-color: var(--cor-fundo-1);
+}
+.projetoCapa > .githubLink > img {
+    height: 2rem;
+}
+
 
 /* 
 FOOTER

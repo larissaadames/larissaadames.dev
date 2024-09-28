@@ -25,7 +25,7 @@
     <main>
         <div class="container profile">
             <div class="profile-image">
-                <img src="imgs/IconDoisTeste.png" alt="Foto de Larissa Adames" />
+                <img src="imgs/IconDoisTeste.webp" alt="Foto de Larissa Adames" />
             </div>
             <div class="profile-text">
                 <h1 style="color: var(--cor-texto-1);">Olá, eu sou a</h1>
@@ -58,37 +58,51 @@
             </h2>
 
             <div class="projetoImagens">
-                <div class="projetoCapa" style="background-image: url('imgs/CapaHackathon.png');">
+                <div class="projetoCapa" style="background-image: url('imgs/CapaHackathon.webp');">
                     <h3>Hackathon</h3>
                     <p>
                         Hackathon do grupo marista
                     </p>
+                    <a class="githubLink" href="https://github.com/larissaadames/">
+                        <img data-iconpath="github" src="imgs/github-white.svg" alt="GitHub">
+                    </a>
                 </div>
-                <div class="projetoCapa" style="background-image: url('imgs/CapaArduinoRGB.png');"> 
+                <div class="projetoCapa" style="background-image: url('imgs/CapaArduinoRGB.webp');"> 
                     <h3>Arduino RGB</h3>
                     <p>
                         Led RGB controlado pelo celular 
                     </p>
+                    <a class="githubLink" href="https://github.com/larissaadames/">
+                        <img data-iconpath="github" src="imgs/github-white.svg" alt="GitHub">
+                    </a>
                 </div>
-                <div class="projetoCapa" style="background-image: url('imgs/capaWaveloom.png');">
+                <div class="projetoCapa" style="background-image: url('imgs/capaWaveloom.webp');">
                     <h3>Waveloom</h3>
                     <p>
                         Trabalho sobre ongs
                     </p>
+                    <a class="githubLink" href="https://github.com/larissaadames/">
+                        <img data-iconpath="github" src="imgs/github-white.svg" alt="GitHub">
+                    </a>
                 </div>
                 <div class="projetoCapa" style="background-image: url('imgs/Capa4ContadorLed.webp');"> 
                     <h3>Contador de dedos com arduino</h3>
                     <p>
                         Contador de dedos com arduino
                     </p>
+                    <a class="githubLink" href="https://github.com/larissaadames/">
+                        <img data-iconpath="github" src="imgs/github-white.svg" alt="GitHub">
+                    </a>
                 </div>
                 <div class="projetoCapa" style="background-image: url('imgs/Capa5ContadorLed.webp');">
                     <h3>Waveloom</h3>
                     <p>
                         Carrinho de controle remoto
                     </p>
+                    <a class="githubLink" href="https://github.com/larissaadames/">
+                        <img data-iconpath="github" src="imgs/github-white.svg" alt="GitHub">
+                    </a>
                 </div>
-
             </div>
 
         </div>
@@ -98,8 +112,8 @@
         <a class="logo">
             <span class="roxo">&lt;</span>larissa.a.g<span class="roxo">/&gt;</span>
         </a>
-        <a href="https://github.com/larissaadames"> <img src="imgs/github-white.svg" alt="GitHub"> GitHub</a>
-        <a href="linkedin"><img src="imgs/LI-In-Bug.png" alt="LinkedIn"> LinkedIn</a>
+        <a href="https://github.com/larissaadames"> <img data-iconpath="github" src="imgs/github-white.svg" alt="GitHub"> GitHub</a>
+        <a href="linkedin"><img data-iconpath="linkedin" src="imgs/linkedin-white.png" alt="LinkedIn"> LinkedIn</a>
         <a href="mailto:contato@larissaadames.dev">contato@larissaadames.dev</a>
     </footer>
 
@@ -107,10 +121,22 @@
         document.getElementById('switch').addEventListener('change', () => {
             document.body.classList.toggle('light-mode');
             localStorage.setItem('light-mode', (document.body.classList.contains('light-mode')));
+            updateColorMode();
         });
         if (localStorage.getItem('light-mode') === 'true') {
             document.body.classList.add('light-mode');
             document.getElementById('switch').checked = true;
+            updateColorMode();
+        }
+
+        function updateColorMode() {
+            document.querySelectorAll('img').forEach(img => {
+                if (img.getAttribute('data-iconpath') == "github") {
+                    img.src = document.body.classList.contains('light-mode') ? "imgs/github-dark.svg" : "imgs/github-white.svg"
+                } else if (img.getAttribute('data-iconpath') == "linkedin") {
+                    img.src = document.body.classList.contains('light-mode') ? "imgs/linkedin-dark.png" : "imgs/linkedin-white.png"
+                }      
+            })
         }
     </script>
 </body>
