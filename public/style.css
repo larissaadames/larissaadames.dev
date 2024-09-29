@@ -288,6 +288,21 @@ p {
     height: 2rem;
 }
 
+.projetoCapa > .figmaLink {
+    transition: background-color .3s ease;
+    background-color: var(--cor-fundo-2);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.projetoCapa > .figmaLink:hover {
+    background-color: var(--cor-fundo-1);
+}
+.projetoCapa > .figmaLink > img {
+    height: 3rem;
+}
+
 
 /* 
 FOOTER
