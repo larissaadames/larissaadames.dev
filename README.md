@@ -1,6 +1,6 @@
 # Portfólio
 * linguagens utilizadas: HTML, CSS e JavaScript
-## Projetos neles:
+## Projetos:
 * Contador de dedos com arduino
 * Audi R8
 * Waveloom
