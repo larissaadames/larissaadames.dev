@@ -218,7 +218,7 @@ p {
     margin-bottom: 20px;
 }
 
-.container.projetos {
+.containerProjetos {
     display: flex;
     flex-direction: column;
     align-items: center;
